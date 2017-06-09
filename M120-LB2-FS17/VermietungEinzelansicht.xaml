@@ -14,10 +14,16 @@
         <Button Grid.Row="0" Height="20px" Click="Back_Click">Back</Button>
         <DataGrid Grid.Row="1" Visibility="Visible" Name="dg_vermietung" CellEditEnding="updateVermietung" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="Kunde" Binding="{Binding Kunde.Name}" Header="Kunde" />
+                <DataGridComboBoxColumn x:Name="Kunde" Header="Kunde" >
+                    <DataGridComboBoxColumn.EditingElementStyle>
+                        <Style TargetType="{x:Type ComboBox}">
+                            <EventSetter Event="SelectionChanged" Handler="kunde_select" />
+                        </Style>
+                    </DataGridComboBoxColumn.EditingElementStyle>
+                </DataGridComboBoxColumn>
                 <DataGridTextColumn x:Name="Start"  Binding="{Binding Start}" Header="Start" />
                 <DataGridTextColumn x:Name="Ende" Binding="{Binding Ende}" Header="Ende" />
-                <DataGridTextColumn x:Name="Fahrrad" Binding="{Binding Fahrrad.Modell}" Header="Fahrrad" />
+                <DataGridComboBoxColumn x:Name="Fahrrad" Header="Fahrrad" />
 
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>

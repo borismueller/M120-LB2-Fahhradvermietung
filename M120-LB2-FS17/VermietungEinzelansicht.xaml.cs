@@ -42,14 +42,30 @@ namespace M120_LB2_FS17
 
         public void anzeigen()
         {
-            //TODO: besserer Code, nur id mitgeben
-            Console.WriteLine("\n\n\n " + vermietung.Kunde.Name);
+            //TODO: besserer Code, nur id mitgeben, Name direkt anzeigen
 
             v = Bibliothek.Vermietung_nach_ID(vermietung.ID);
             List<Vermietung> ls = new List<Vermietung>();
             ls.Add(v);
 
             dg_vermietung.ItemsSource = ls;
+
+            //Kunden
+            List<Kunde> kunden = Bibliothek.Kunde_Alle();
+            List<String> listeNamen = new List<String>();
+            foreach (Kunde k in kunden) {
+                listeNamen.Add(k.Name);
+            }
+            Kunde.ItemsSource = listeNamen;
+
+            //Fahrrad
+            List <Fahrrad> fahrradz = Bibliothek.Fahrrad_Alle();
+            List<dynamic> listeModell = new List<dynamic>();
+            foreach (Fahrrad f in fahrradz)
+            {
+                listeModell.Add(f.Modell);
+            }
+            Fahrrad.ItemsSource = listeModell;
         }
 
         private void neueVermietung(object sender, RoutedEventArgs e)
@@ -72,8 +88,6 @@ namespace M120_LB2_FS17
                 int rowIndex = e.Row.GetIndex();
                 var el = e.EditingElement as TextBox;
 
-
-                //TODO: Fehlermeldung
                 if (bindingPath.Equals("Start"))
                 {
                     DateTime date;
@@ -81,7 +95,9 @@ namespace M120_LB2_FS17
                     {
                         //setzte das Datum neu
                         v.Start = date;
+                        el.Background = Brushes.LightCyan;
                     }
+                    else el.Background = Brushes.IndianRed;
                 } if (bindingPath.Equals("Ende"))
                 {
                     DateTime date;
@@ -89,9 +105,16 @@ namespace M120_LB2_FS17
                     {
                         //setzte das Datum neu
                         v.Ende = date;
+                        el.Background = Brushes.LightCyan;
                     }
+                    else el.Background = Brushes.IndianRed;
                 }
             }
+        }
+
+        private void kunde_select(object sender, SelectionChangedEventArgs e)
+        {
+            //TODO:
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
