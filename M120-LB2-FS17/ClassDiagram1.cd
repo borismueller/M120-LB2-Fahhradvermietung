@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="M120_LB2_FS17.Vermietung">
+    <Position X="5.5" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAgAAEEAAAAAgAAAAAAAAAACAABAAAAAA=</HashCode>
+      <FileName>Vermietung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="M120_LB2_FS17.Kunde">
+    <Position X="0.5" Y="1.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAACCAAAAAAAgAAMAAEAAAQAAAAAAAAAAAQABAAAAAQ=</HashCode>
+      <FileName>Kunde.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="M120_LB2_FS17.Fahrrad">
+    <Position X="3.5" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAgAAMAAAAAAAAAAAAAAAAAAgABAABAAA=</HashCode>
+      <FileName>Fahrrad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="M120_LB2_FS17.Bibliothek">
+    <Position X="4.5" Y="4.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAABEAAABACIAAAgAAAAgAAAIAAAAABDQUAAAAQIA=</HashCode>
+      <FileName>Bibliothek.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
