@@ -21,6 +21,7 @@ namespace M120_LB2_FS17
     public partial class VermietungEinzelansicht : UserControl
     {
         private dynamic vermietung; //das vermietungs objekt das dargestellt / verändert wird
+        private MainWindow main;
         Vermietung v; //TODO 
 
         public VermietungEinzelansicht()
@@ -29,12 +30,13 @@ namespace M120_LB2_FS17
             InitializeComponent();
         }
 
-        public VermietungEinzelansicht(dynamic v)
+        public VermietungEinzelansicht(dynamic v, MainWindow main)
         {
             // Konstruktor für Ansicht von Element
             //TODO: besserer Code, nur id mitgeben
             InitializeComponent();
             this.vermietung = v;
+            this.main = main;
             anzeigen();
         }
 
@@ -63,11 +65,15 @@ namespace M120_LB2_FS17
             var column = e.Column as DataGridBoundColumn;
             if (column != null)
             {
+                //TODO: Andere Werte
+
                 Console.WriteLine(column);
                 var bindingPath = (column.Binding as Binding).Path.Path;
                 int rowIndex = e.Row.GetIndex();
                 var el = e.EditingElement as TextBox;
 
+
+                //TODO: Fehlermeldung
                 if (bindingPath.Equals("Start"))
                 {
                     DateTime date;
@@ -85,9 +91,13 @@ namespace M120_LB2_FS17
                         v.Ende = date;
                     }
                 }
-
-                Console.WriteLine(el);
             }
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+            main.init();
         }
     }
 }

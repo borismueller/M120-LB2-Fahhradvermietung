@@ -24,7 +24,7 @@ namespace M120_LB2_FS17
         {
             InitializeComponent();
             datenBereitstellen();
-            listenansicht();
+            init();
         }
 
         #region Testdaten
@@ -137,11 +137,28 @@ namespace M120_LB2_FS17
         {
             Console.WriteLine("yo " + sender + e);
             dynamic d = lb_vermietung.SelectedItem;
-            Console.WriteLine("d: "+d.Kunde.Name);
+            if (d != null)
+            {
+                //d kann null sein wenn das Fenster neu geladen wird
+                Console.WriteLine("d: " + d.Kunde.Name);
 
-            UserControl vermietungEinzelansicht = new VermietungEinzelansicht(d);
-            //container = null;
-            this.Content = vermietungEinzelansicht;
+                UserControl vermietungEinzelansicht = new VermietungEinzelansicht(d, this);
+                mainContentControl.Content = vermietungEinzelansicht;
+                sp_main.Visibility = Visibility.Hidden;
+            }
+        }
+        
+        public void init()
+        {
+            listenansicht();
+            sp_main.Visibility = Visibility.Visible;
+        }
+
+        private void Kalender_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl kalender = new Kalender(this);
+            mainContentControl.Content = kalender;
+            sp_main.Visibility = Visibility.Hidden;
         }
     }
 }

@@ -57,11 +57,18 @@
     </ApplicationDefinition>
     <Compile Include="Bibliothek.cs" />
     <Compile Include="Fahrrad.cs" />
+    <Compile Include="Kalender.xaml.cs">
+      <DependentUpon>Kalender.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Kunde.cs" />
     <Compile Include="Vermietung.cs" />
     <Compile Include="VermietungEinzelansicht.xaml.cs">
       <DependentUpon>VermietungEinzelansicht.xaml</DependentUpon>
     </Compile>
+    <Page Include="Kalender.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

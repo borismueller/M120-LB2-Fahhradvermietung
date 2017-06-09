@@ -7,12 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <DataGrid Name="dg_vermietung" CellEditEnding="updateVermietung" AutoGenerateColumns="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Height="20px" Click="Back_Click">Back</Button>
+        <DataGrid Grid.Row="1" Visibility="Visible" Name="dg_vermietung" CellEditEnding="updateVermietung" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Kunde.Name}" Header="Kunde" />
-                <DataGridTextColumn Binding="{Binding Start}" Header="Start" />
-                <DataGridTextColumn Binding="{Binding Ende}" Header="Ende" />
-                <DataGridTextColumn Binding="{Binding Fahrrad.Modell}" Header="Fahrrad" />
+                <DataGridTextColumn x:Name="Kunde" Binding="{Binding Kunde.Name}" Header="Kunde" />
+                <DataGridTextColumn x:Name="Start"  Binding="{Binding Start}" Header="Start" />
+                <DataGridTextColumn x:Name="Ende" Binding="{Binding Ende}" Header="Ende" />
+                <DataGridTextColumn x:Name="Fahrrad" Binding="{Binding Fahrrad.Modell}" Header="Fahrrad" />
 
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
