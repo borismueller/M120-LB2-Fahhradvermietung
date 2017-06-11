@@ -16,7 +16,7 @@ namespace M120_LB2_FS17
         public Double AnzahlVermietungen { get; set; }
         public Double TotalStundenVermietungen { get; set; }
         public Boolean IstAktiv { get; set; }
-        public Color Farbe { get; set; }
+        public Color Farbe { get; set; } //nice
         public List<Vermietung> Vermietungen { get; set; }
 
         public Kunde()

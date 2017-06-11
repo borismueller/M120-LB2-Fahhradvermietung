@@ -135,14 +135,13 @@ namespace M120_LB2_FS17
 
         private void lb_vermietung_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Console.WriteLine("yo " + sender + e);
             dynamic d = lb_vermietung.SelectedItem;
             if (d != null)
             {
                 //d kann null sein wenn das Fenster neu geladen wird
                 Console.WriteLine("d: " + d.Kunde.Name);
 
-                UserControl vermietungEinzelansicht = new VermietungEinzelansicht(d, this);
+                UserControl vermietungEinzelansicht = new VermietungEinzelansicht(d.ID, this);
                 mainContentControl.Content = vermietungEinzelansicht;
                 sp_main.Visibility = Visibility.Hidden;
             }

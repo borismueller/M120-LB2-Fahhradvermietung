@@ -11,28 +11,32 @@
             <RowDefinition Height="50" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Height="20px" Click="Back_Click">Back</Button>
-        <DataGrid Grid.Row="1" Visibility="Visible" Name="dg_vermietung" CellEditEnding="updateVermietung" AutoGenerateColumns="False">
+        <Button Grid.Row="0" Height="20px" Click="Back_Click" Margin="0,5,0,25">Zurück</Button>
+        <Button Grid.Row="0" Height="20px" Click="neueVermietung" Margin="0,30,0,0" x:Name="btn_neu">Neu</Button>
+        <Button Grid.Row="0" Height="20px" Click="speichernVermietung" Margin="0,30,0,0" x:Name="btn_save" Visibility="Hidden">Speichern</Button>
+        <DataGrid Grid.Row="1" Visibility="Visible" Name="dg_vermietung" CellEditEnding="updateVermietung" CanUserAddRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridComboBoxColumn x:Name="Kunde" Header="Kunde" >
-                    <DataGridComboBoxColumn.EditingElementStyle>
-                        <Style TargetType="{x:Type ComboBox}">
-                            <EventSetter Event="SelectionChanged" Handler="kunde_select" />
-                        </Style>
-                    </DataGridComboBoxColumn.EditingElementStyle>
-                </DataGridComboBoxColumn>
+                <!---<DataGridTextColumn x:Name="Kunde" Binding="{Binding Kunde.Name}" Header="Kunde" /> -->
                 <DataGridTextColumn x:Name="Start"  Binding="{Binding Start}" Header="Start" />
                 <DataGridTextColumn x:Name="Ende" Binding="{Binding Ende}" Header="Ende" />
-                <DataGridComboBoxColumn x:Name="Fahrrad" Header="Fahrrad" />
+                <!-- <DataGridTextColumn x:Name="Fahrrad"  Binding="{Binding Fahrrad.Modell}" Header="Fahrrad" /> -->
 
-                <DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Kunde" DisplayIndex="0">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Click="neueVermietung">Create</Button>
+                            <Button Click="btn_kunde" Content="{Binding Kunde.Name}"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Fahrrad" DisplayIndex="1">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="{Binding Fahrrad.Modell}"></Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <local:selectKunden Grid.Row="1" x:Name="uc_selectKunden" Visibility="Hidden"/>
     </Grid>
 </UserControl>
