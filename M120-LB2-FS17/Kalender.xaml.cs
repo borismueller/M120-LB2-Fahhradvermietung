@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,13 +37,19 @@ namespace M120_LB2_FS17
 
         public void init()
         {
-            List<Vermietung> vermietugnen = Bibliothek.Vermietung_Alle();
+            /*List<Vermietung> vermietugnen = Bibliothek.Vermietung_Alle();
             
             foreach (Vermietung v in vermietugnen) {
                 c.BlackoutDates.Add(new CalendarDateRange(
                    v.Start, v.Ende
                    ));
-            }
+            }*/
+
+            //Hole ersten Wochentag
+            DateTime firstDay = DateTime.Now.AddDays(-(DateTime.Now.DayOfWeek - CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek));
+            Console.WriteLine("firstday: " + firstDay);
+
+            montag.DataContext = firstDay;
         }
     }
 }

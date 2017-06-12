@@ -7,9 +7,36 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TextBlock Text="block" />
-        <Calendar Name="c">
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="Montag" />
+        <TextBlock Grid.Column="1" Grid.Row="0" Text="Dienstag" />
+        <TextBlock Grid.Column="2" Grid.Row="0" Text="Mittwoch" />
+        <TextBlock Grid.Column="3" Grid.Row="0" Text="Donnerstag" />
+        <TextBlock Grid.Column="4" Grid.Row="0" Text="Freitag" />
+        <TextBlock Grid.Column="5" Grid.Row="0" Text="Samstag" />
+        <TextBlock Grid.Column="6" Grid.Row="0" Text="Sonntag" />
+
+        <TextBlock Grid.Column="0" Grid.Row="1" x:Name="montag" Text="{Binding}" />
+        <TextBlock Grid.Column="1" Grid.Row="1" x:Name="dienstag" />
+        <TextBlock Grid.Column="2" Grid.Row="1" x:Name="mittwoch" />
+        <TextBlock Grid.Column="3" Grid.Row="1" x:Name="donnerstag" />
+        <TextBlock Grid.Column="4" Grid.Row="1" x:Name="freitag" />
+        <TextBlock Grid.Column="5" Grid.Row="1" x:Name="samstag" />
+        <TextBlock Grid.Column="6" Grid.Row="1" x:Name="sonntag" />
+
+        <Calendar Visibility="Hidden" Name="c">
         </Calendar>
     </Grid>
 </UserControl>
