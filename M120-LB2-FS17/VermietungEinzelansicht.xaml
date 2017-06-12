@@ -31,12 +31,13 @@
                 <DataGridTemplateColumn Header="Fahrrad" DisplayIndex="1">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="{Binding Fahrrad.Modell}"></Button>
+                            <Button Click="btn_fahrrad" Content="{Binding Fahrrad.Modell}"></Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <local:selectKunden Grid.Row="1" x:Name="uc_selectKunden" Visibility="Hidden"/>
+        <local:selectFahrrad Grid.Row="1" x:Name="uc_selectFahrrad" Visibility="Hidden"/>
     </Grid>
 </UserControl>

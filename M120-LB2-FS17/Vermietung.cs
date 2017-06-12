@@ -15,6 +15,7 @@ namespace M120_LB2_FS17
         public Fahrrad Fahrrad { get; set; }
         public Kunde Kunde { get; set; }
         public Color Farbe { get; set; }
+
         public Vermietung()
         {
 

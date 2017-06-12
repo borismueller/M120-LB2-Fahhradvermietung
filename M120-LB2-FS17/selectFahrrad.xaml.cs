@@ -16,28 +16,28 @@ using System.Windows.Shapes;
 namespace M120_LB2_FS17
 {
     /// <summary>
-    /// Interaktionslogik für selectKunden.xaml
+    /// Interaktionslogik für selectFahrrad.xaml
     /// </summary>
-    public partial class selectKunden : UserControl
+    public partial class selectFahrrad : UserControl
     {
         private Vermietung vermietung;
         private VermietungEinzelansicht einzelansicht;
 
-        public selectKunden()
+        public selectFahrrad()
         {
             InitializeComponent();
-            listeKunden();
+            listeFahrrad();
         }
 
-        public void listeKunden()
+        public void listeFahrrad()
         {
-            dg_liste.ItemsSource = Bibliothek.Kunde_Alle();
+            dg_liste.ItemsSource = Bibliothek.Fahrrad_Alle();
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            //setzte Kunden neu
-            vermietung.Kunde = (Kunde)dg_liste.SelectedItem;
+            //setzte Fahrrad neu
+            vermietung.Fahrrad = (Fahrrad)dg_liste.SelectedItem;
             this.Visibility = Visibility.Hidden;
             einzelansicht.anzeigen();
         }

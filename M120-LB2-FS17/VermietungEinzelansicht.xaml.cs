@@ -40,10 +40,10 @@ namespace M120_LB2_FS17
 
         public void anzeigen()
         {
-            //TODO: besserer Code
-
             List<Vermietung> ls = new List<Vermietung>();
             ls.Add(vermietung);
+
+            Console.WriteLine("vermietung: " + vermietung.Kunde);
 
             dg_vermietung.ItemsSource = ls;
             dg_vermietung.Visibility = Visibility.Visible;
@@ -51,16 +51,16 @@ namespace M120_LB2_FS17
 
         private void neueVermietung(object sender, RoutedEventArgs e)
         {
-            //TODO
-            dg_vermietung.CanUserAddRows = true;
             btn_neu.Visibility = Visibility.Hidden;
             btn_save.Visibility = Visibility.Visible;
+
+            this.vermietung = new Vermietung();
+            anzeigen();
         }
 
         private void speichernVermietung(object sender, RoutedEventArgs e)
         {
-            Vermietung neu = new Vermietung();
-            //neu.Start = Start.GetValue;
+            Bibliothek.Vermietung_Neu(vermietung);
         }
 
         private void updateVermietung(object sender, DataGridCellEditEndingEventArgs e)
@@ -115,11 +115,18 @@ namespace M120_LB2_FS17
 
         private void btn_kunde(object sender, RoutedEventArgs e)
         {
-            //TODO: same für Fahrrad
             uc_selectKunden.Visibility = Visibility.Visible;
             dg_vermietung.Visibility = Visibility.Hidden;
-            uc_selectKunden.setVermietung(vermietung.ID);
+            uc_selectKunden.setVermietung(vermietung);
             uc_selectKunden.setEinzelansicht(this);
+        }
+
+        private void btn_fahrrad(object sender, RoutedEventArgs e)
+        {
+            uc_selectFahrrad.Visibility = Visibility.Visible;
+            dg_vermietung.Visibility = Visibility.Hidden;
+            uc_selectFahrrad.setVermietung(vermietung);
+            uc_selectFahrrad.setEinzelansicht(this);
         }
     }
 }
