@@ -28,13 +28,13 @@
         <TextBlock Grid.Column="5" Grid.Row="0" Text="Samstag" />
         <TextBlock Grid.Column="6" Grid.Row="0" Text="Sonntag" />
 
-        <TextBlock Grid.Column="0" Grid.Row="1" x:Name="montag" Text="{Binding}" />
-        <TextBlock Grid.Column="1" Grid.Row="1" x:Name="dienstag" />
-        <TextBlock Grid.Column="2" Grid.Row="1" x:Name="mittwoch" />
-        <TextBlock Grid.Column="3" Grid.Row="1" x:Name="donnerstag" />
-        <TextBlock Grid.Column="4" Grid.Row="1" x:Name="freitag" />
-        <TextBlock Grid.Column="5" Grid.Row="1" x:Name="samstag" />
-        <TextBlock Grid.Column="6" Grid.Row="1" x:Name="sonntag" />
+        <TextBlock Grid.Column="0" Grid.Row="1" x:Name="monday" Text="{Binding}" />
+        <TextBlock Grid.Column="1" Grid.Row="1" x:Name="tuesday" Text="{Binding}" />
+        <TextBlock Grid.Column="2" Grid.Row="1" x:Name="wednesday" Text="{Binding}" />
+        <TextBlock Grid.Column="3" Grid.Row="1" x:Name="thursday" Text="{Binding}" />
+        <TextBlock Grid.Column="4" Grid.Row="1" x:Name="friday" Text="{Binding}" />
+        <TextBlock Grid.Column="5" Grid.Row="1" x:Name="saturday" Text="{Binding}" />
+        <TextBlock Grid.Column="6" Grid.Row="1" x:Name="sunday" Text="{Binding}" />
 
         <Calendar Visibility="Hidden" Name="c">
         </Calendar>

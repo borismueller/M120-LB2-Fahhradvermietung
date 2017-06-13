@@ -43,10 +43,10 @@ namespace M120_LB2_FS17
             List<Vermietung> ls = new List<Vermietung>();
             ls.Add(vermietung);
 
-            Console.WriteLine("vermietung: " + vermietung.Kunde);
-
             dg_vermietung.ItemsSource = ls;
             dg_vermietung.Visibility = Visibility.Visible;
+            if (fehler) dg_vermietung.Background = Brushes.Salmon;
+            else dg_vermietung.Background = Brushes.White;
         }
 
         private void neueVermietung(object sender, RoutedEventArgs e)
@@ -75,6 +75,7 @@ namespace M120_LB2_FS17
                 }
             }
             if (!fehler) Bibliothek.Vermietung_Neu(vermietung);
+            anzeigen();
         }
 
         private void updateVermietung(object sender, DataGridCellEditEndingEventArgs e)
