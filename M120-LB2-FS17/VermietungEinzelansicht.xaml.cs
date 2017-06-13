@@ -21,11 +21,11 @@ namespace M120_LB2_FS17
     public partial class VermietungEinzelansicht : UserControl
     {
         private MainWindow main;
+        private bool fehler;
         Vermietung vermietung;
 
         public VermietungEinzelansicht()
         {
-            // Konstruktor für leere ansicht
             InitializeComponent();
         }
 
@@ -60,7 +60,21 @@ namespace M120_LB2_FS17
 
         private void speichernVermietung(object sender, RoutedEventArgs e)
         {
-            Bibliothek.Vermietung_Neu(vermietung);
+            foreach (Vermietung v in Bibliothek.Vermietung_Alle()) {
+                if (v.Start.DayOfYear != vermietung.Start.DayOfYear)
+                {
+                    break; //Nicht am selben Tag
+                } else
+                {
+                    int start = v.Start.Hour;
+                    int ende = v.Ende.Hour;
+                    if (start <= vermietung.Ende.Hour && ende >= vermietung.Start.Hour )
+                    {
+                        fehler = true;
+                    }
+                }
+            }
+            if (!fehler) Bibliothek.Vermietung_Neu(vermietung);
         }
 
         private void updateVermietung(object sender, DataGridCellEditEndingEventArgs e)
@@ -70,11 +84,7 @@ namespace M120_LB2_FS17
             var column = e.Column as DataGridBoundColumn;
             if (column != null)
             {
-                //Kunde und Fahrrad können nicht falsch sein und werden nicht überprüft
-
-                Console.WriteLine(column);
                 var bindingPath = (column.Binding as Binding).Path.Path;
-                int rowIndex = e.Row.GetIndex();
                 var el = e.EditingElement as TextBox;
 
                 if (bindingPath.Equals("Start"))
@@ -86,8 +96,13 @@ namespace M120_LB2_FS17
                         vermietung.Start = date;
                         el.Background = Brushes.LightCyan;
                     }
-                    else el.Background = Brushes.IndianRed;
-                } if (bindingPath.Equals("Ende"))
+                    else
+                    {
+                        el.Background = Brushes.IndianRed;
+                        fehler = true;
+                    }
+                }
+                if (bindingPath.Equals("Ende"))
                 {
                     DateTime date;
                     if (DateTime.TryParse(el.Text, out date))
@@ -96,7 +111,11 @@ namespace M120_LB2_FS17
                         vermietung.Ende = date;
                         el.Background = Brushes.LightCyan;
                     }
-                    else el.Background = Brushes.IndianRed;
+                    else
+                    {
+                        el.Background = Brushes.IndianRed;
+                        fehler = true;
+                    }
                 }
             }
         }
