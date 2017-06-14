@@ -42,11 +42,6 @@ namespace M120_LB2_FS17
             einzelansicht.anzeigen();
         }
 
-        private void btn_new_Click(object sender, RoutedEventArgs e)
-        {
-            //TODO: dadadadaydadadayydadadfa
-        }
-
         public void setVermietung(Object v)
         {
             this.vermietung = (Vermietung)v;

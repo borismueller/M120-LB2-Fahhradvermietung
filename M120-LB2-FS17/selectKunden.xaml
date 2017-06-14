@@ -13,7 +13,6 @@
         </Grid.RowDefinitions>
         <StackPanel>
             <Button x:Name="btn_save" Click="btn_save_Click" Content="Speichern"/>
-            <Button x:Name="btn_new" Click="btn_new_Click" Content="Neu" />
         </StackPanel>
 
                 <DataGrid Grid.Row="1" Name="dg_liste" CanUserAddRows="False" AutoGenerateColumns="False">

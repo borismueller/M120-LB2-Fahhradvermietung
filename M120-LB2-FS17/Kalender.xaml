@@ -46,9 +46,7 @@
         <Button Grid.Column="3" Grid.Row="2" Click="btn_Click" x:Name="btn_thursday" Content="{Binding}" Visibility="Hidden" />
         <Button Grid.Column="4" Grid.Row="2" Click="btn_Click" x:Name="btn_friday" Content="{Binding}" Visibility="Hidden" />
         <Button Grid.Column="5" Grid.Row="2" Click="btn_Click" x:Name="btn_saturday" Content="{Binding}" Visibility="Hidden" />
-        <Button Grid.Column="6" Grid.Row="2" Click="btn_Click" x:Name="btn_sunday" Content="{Binding}" Visibility="Hidden" />
-
-        <!--TODO: woche vor & zurück btns-->
-    </Grid>
+            <Button Grid.Column="6" Grid.Row="2" Click="btn_Click" x:Name="btn_sunday" Content="{Binding}" Visibility="Hidden" />
+        </Grid>
     </DockPanel>
 </UserControl>

@@ -39,8 +39,6 @@ namespace M120_LB2_FS17
 
         public void init()
         {
-            //TODO: besserer Code, weniger switch-shit
-
             TextBlock[] wochentage = { monday, tuesday, wednesday, thursday, friday, saturday, sunday };
             Button[] wochenButtons = { btn_monday, btn_tuesday, btn_wednesday, btn_thursday, btn_friday, btn_saturday, btn_sunday };
 

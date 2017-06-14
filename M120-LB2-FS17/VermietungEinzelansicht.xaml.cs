@@ -121,12 +121,6 @@ namespace M120_LB2_FS17
             }
         }
 
-        private void kunde_select(object sender, SelectionChangedEventArgs e)
-        {
-            //TODO:
-            Console.WriteLine("yo");
-        }
-
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
