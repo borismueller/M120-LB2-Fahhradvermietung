@@ -11,7 +11,7 @@
             <RowDefinition Height="50" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Height="20px" Click="Back_Click" Margin="0,5,0,25">Zurück</Button>
+        <Button Grid.Row="0" Height="20px" Click="Back_Click" Margin="0,5,0,25">Hauptmenu</Button>
         <Button Grid.Row="0" Height="20px" Click="neueVermietung" Margin="0,30,0,0" x:Name="btn_neu">Neu</Button>
         <Button Grid.Row="0" Height="20px" Click="speichernVermietung" Margin="0,30,0,0" x:Name="btn_save" Visibility="Hidden">Speichern</Button>
         <DataGrid Grid.Row="1" Visibility="Visible" Name="dg_vermietung" CellEditEnding="updateVermietung" CanUserAddRows="False" AutoGenerateColumns="False">

@@ -6,7 +6,10 @@
              xmlns:local="clr-namespace:M120_LB2_FS17"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+    <DockPanel>
+        <Button Content="&lt;" Width="15" Click="zurueck"></Button>
+        <Button DockPanel.Dock="Right" Content="&gt;" Width="15" Click="vor"></Button>
+        <Grid Name="g_kalender">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
@@ -17,6 +20,7 @@
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
@@ -36,7 +40,15 @@
         <TextBlock Grid.Column="5" Grid.Row="1" x:Name="saturday" Text="{Binding}" />
         <TextBlock Grid.Column="6" Grid.Row="1" x:Name="sunday" Text="{Binding}" />
 
-        <Calendar Visibility="Hidden" Name="c">
-        </Calendar>
+        <Button Grid.Column="0" Grid.Row="2" Click="btn_Click" x:Name="btn_monday" Content="{Binding}" Visibility="Hidden" />
+        <Button Grid.Column="1" Grid.Row="2" Click="btn_Click" x:Name="btn_tuesday" Content="{Binding}" Visibility="Hidden" />
+        <Button Grid.Column="2" Grid.Row="2" Click="btn_Click" x:Name="btn_wednesday" Content="{Binding}" Visibility="Hidden" />
+        <Button Grid.Column="3" Grid.Row="2" Click="btn_Click" x:Name="btn_thursday" Content="{Binding}" Visibility="Hidden" />
+        <Button Grid.Column="4" Grid.Row="2" Click="btn_Click" x:Name="btn_friday" Content="{Binding}" Visibility="Hidden" />
+        <Button Grid.Column="5" Grid.Row="2" Click="btn_Click" x:Name="btn_saturday" Content="{Binding}" Visibility="Hidden" />
+        <Button Grid.Column="6" Grid.Row="2" Click="btn_Click" x:Name="btn_sunday" Content="{Binding}" Visibility="Hidden" />
+
+        <!--TODO: woche vor & zurück btns-->
     </Grid>
+    </DockPanel>
 </UserControl>

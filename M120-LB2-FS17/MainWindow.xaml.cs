@@ -77,8 +77,8 @@ namespace M120_LB2_FS17
             Vermietung v1 = new Vermietung();
             v1.Fahrrad = Bibliothek.Fahrrad_nach_ID(1);
             v1.Kunde = Bibliothek.Kunde_nach_ID(1);
-            v1.Start = new DateTime(2017, 6, 7, 8, 0, 0);
-            v1.Ende = new DateTime(2017, 6, 7, 15, 0, 0);
+            v1.Start = new DateTime(2017, 6, 12, 8, 0, 0);
+            v1.Ende = new DateTime(2017, 6, 12, 15, 0, 0);
             Bibliothek.Vermietung_Neu(v1);
 
             Vermietung v2 = new Vermietung();
